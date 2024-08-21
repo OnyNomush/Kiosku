@@ -37,9 +37,9 @@ nav {
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0 auto; /* Centering the navigation items */
+    margin: 0 auto; 
     display: flex;
-    justify-content: center; /* Center the links */
+    justify-content: center;
     flex-grow: 1;
 }
 
@@ -223,7 +223,7 @@ footer {
     width: 50px;
     height: 50px;
     margin-right: 10px;
-    border-radius: 50%; /* Membuat logo menjadi bulat */
+    border-radius: 50%; 
     object-fit: cover;
 }
 
