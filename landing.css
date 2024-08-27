@@ -180,10 +180,19 @@ nav .button.daftar {
 }
 
 .cta {
-    background-color: #fcb045;
+    background-image: url('aset/Aset Gambar/hiasan.jpg');
+    background-size: cover;
+    background-position: center;
     padding: 50px 20px;
+    color: white; 
     text-align: center;
-    color: #fff;
+}
+
+.cta-content {
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
 }
 
 .cta-content h2 {
