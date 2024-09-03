@@ -182,7 +182,7 @@ nav .button.daftar {
 }
 
 .cta {
-    background-image: url('aset/Aset Gambar/hiasan.jpg');
+    background-image: url('../aset/Aset Gambar/hiasan.jpg');
     background-size: cover;
     background-position: center;
     padding: 50px 20px;
@@ -217,6 +217,7 @@ nav .button.daftar {
     cursor: pointer;
 }
 
+/* Updated Footer Styles */
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -229,7 +230,8 @@ nav .button.daftar {
 
 .footer-logo {
     display: flex;
-    align-items: center; 
+    flex-direction: column; /* Aligns items vertically */
+    align-items: flex-start; /* Aligns items to the start (left) */
     max-width: 300px;
     margin-bottom: 20px;
 }
@@ -237,6 +239,7 @@ nav .button.daftar {
 .logo-and-text {
     display: flex;
     align-items: center;
+    margin-bottom: 10px; /* Added margin below logo and title */
 }
 
 .logo-and-text img {
@@ -251,24 +254,31 @@ nav .button.daftar {
     margin: 0;
 }
 
+.footer-social-icons {
+    margin-top: 10px;
+    display: flex;
+}
+
 .footer-social-icons a {
     margin-right: 10px;
 }
 
 .footer-links {
     display: flex;
-    justify-content: space-between;
-    flex: 1;
-    max-width: 600px;
-}
-
-.footer-links h4 {
-    margin-bottom: 15px;
+    justify-content: center; /* Memusatkan bagian link secara horizontal */
+    align-items: center; /* Memusatkan bagian link secara vertikal */
+    gap: 24px; /* Menentukan jarak antar elemen */
 }
 
 .footer-links ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    text-align: left; /* Mengembalikan text align ke kiri */
+}
+
+.footer-links h4 {
+    margin-bottom: 15px;
 }
 
 .footer-links ul li {
@@ -299,4 +309,3 @@ nav .button.daftar {
 .footer-bottom a:hover {
     text-decoration: underline;
 }
-

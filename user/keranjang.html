@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja</title>
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="keranjang.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="cart">
+        <h2>Keranjang Belanja</h2>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Produk</th>
+                    <th>Harga</th>
+                    <th>Jumlah</th>
+                    <th>Diskon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="product-details">
+                        <img src="images/produk1.jpg" alt="Black Shirt">
+                        <div class="item-details">
+                            <h4>Black Shirt</h4>
+                            <p>Size XL</p>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="original-price">Rp. 500.000</span><br>
+                        <span class="discounted-price">Rp. 400.000</span>
+                    </td>
+                    <td>
+                        <div class="quantity-control">
+                            <button class="qty-btn">-</button>
+                            <input type="text" value="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </td>
+                    <td class="discount">20%</td>
+                </tr>
+                <tr>
+                    <td class="product-details">
+                        <img src="images/produk2.jpg" alt="Jeans">
+                        <div class="item-details">
+                            <h4>Jeans</h4>
+                            <p>Size L</p>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="discounted-price">Rp. 300.000</span>
+                    </td>
+                    <td>
+                        <div class="quantity-control">
+                            <button class="qty-btn">-</button>
+                            <input type="text" value="2">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </td>
+                    <td class="discount">0%</td>
+                </tr>
+                <tr>
+                    <td class="product-details">
+                        <img src="images/produk3.jpg" alt="White T-Shirt">
+                        <div class="item-details">
+                            <h4>White T-Shirt</h4>
+                            <p>Size XL</p>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="discounted-price">Rp. 235.000</span>
+                    </td>
+                    <td>
+                        <div class="quantity-control">
+                            <button class="qty-btn">-</button>
+                            <input type="text" value="1">
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </td>
+                    <td class="discount">0%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <p>Subtotal Produk: <span>Rp. 935.000</span></p>
+            <p>Subtotal Pengiriman: <span>Rp. 10.000</span></p>
+            <div class="total">
+                <p>Total Pembayaran:</p>
+                <h3>Rp. 945.000</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="checkout">
+        <h3>Info Pembayaran</h3>
+        <input type="text" placeholder="Masukkan Alamat Pengiriman">
+
+        <div class="voucher-section">
+            <input type="text" placeholder="Masukkan Kode Voucher">
+            <button class="apply-voucher">Pakai Voucher</button>
+        </div>
+
+        <h4>Opsi Pengiriman</h4>
+        <div class="shipping-options">
+            <label>
+                <input type="radio" name="shipping" checked>
+                <img src="images/jne.png" alt="JNE">
+            </label>
+            <label>
+                <input type="radio" name="shipping">
+                <img src="images/jnt.png" alt="J&T Express">
+            </label>
+            <label>
+                <input type="radio" name="shipping">
+                <img src="images/tiki.png" alt="TIKI">
+            </label>
+        </div>
+
+        <h4>Metode Pembayaran</h4>
+        <div class="payment-options">
+            <label>
+                <input type="radio" name="payment" checked>
+                <img src="images/debit.png" alt="Debit">
+            </label>
+            <label>
+                <input type="radio" name="payment">
+                <img src="images/alfamart.png" alt="Alfamart">
+            </label>
+            <label>
+                <input type="radio" name="payment">
+                <img src="images/indomaret.png" alt="Indomaret">
+            </label>
+        </div>
+
+        <textarea placeholder="Tambahkan catatan untuk penjual"></textarea>
+
+        <button class="order-button">Buat Pesanan</button>
+    </div>
+</div>
+
+</body>
+</html>
