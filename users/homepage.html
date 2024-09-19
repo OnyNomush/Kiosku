@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
-        <div class="content flex-grow-1">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="content flex-grow-1">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid"> <!-- Menggunakan container-fluid agar memenuhi lebar halaman -->
                 <a class="navbar-brand d-flex align-items-center" href="#">
                     <img src="../aset/icon/kioskuu.jpg" alt="Kiosku Logo" class="rounded-circle logo-img-navbar">
                     <span class="ml-2"><b>Kiosku</b></span>
@@ -25,101 +26,58 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <a class="nav-link text-dark" href="#"><i class="fas fa-shopping-cart"></i> Keranjang</a>
+                <div class="navbar-nav ml-auto d-flex align-items-center">
+                    <a class="nav-link text-dark" href="#">Beranda</a>
+                    <a class="nav-link text-dark" href="#">Koleksi</a>
+                    <a class="nav-link text-dark" href="#"><i class="fas fa-user"></i> Profil</a>
+                    <a class="nav-link text-dark" href="keranjang.html"><i class="fas fa-shopping-cart"></i> Keranjang</a>
                 </div>
-            </nav>
+            </div>
+        </nav>
 
-    <div class="d-flex">
-        <div class="sidebar bg-dark">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <div class="nav-icon">
-                        <img src="../aset/icon/beranda.svg" alt="Beranda">
-                    </div>
-                    <a class="nav-link text-white" href="#">Beranda</a>
-                </li>
-                <li class="nav-item">
-                    <div class="nav-icon">
-                        <img src="../aset/icon/koleksi.svg" alt="Koleksi">
-                    </div>
-                    <a class="nav-link text-white" href="#">Koleksi</a>
-                </li>
-                <li class="nav-item">
-                    <div class="nav-icon">
-                        <img src="../aset/icon/riwayat.svg" alt="Riwayat">
-                    </div>
-                    <a class="nav-link text-white" href="#">Riwayat</a>
-                </li>
-                <li class="nav-item">
-                    <div class="nav-icon">
-                        <img src="../aset/icon/profile.svg" alt="Profil">
-                    </div>
-                    <a class="nav-link text-white" href="#">Profil</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+        <span class="badge text-bg-primary">Primary</span>
+    <span class="badge text-bg-secondary">Secondary</span>
+    <span class="badge text-bg-success">Success</span>
+    <span class="badge text-bg-danger">Danger</span>
+    <span class="badge text-bg-warning">Warning</span>
+    <span class="badge text-bg-info">Info</span>
+    <span class="badge text-bg-light">Light</span>
+    <span class="badge text-bg-dark">Dark</span>
 
-    <div class="container my-5">
-        <div class="row">
-        <div class="col-3">
-            <button class="category-button">
-                <img src="../aset/Aset Gambar/baju1.jpg" alt="Fashion" class="img-fluid">
-                <p>Fashion</p>
-            </button>
-        </div>
-        <div class="col-3">
-            <button class="category-button">
-                <img src="../aset/Aset Gambar/perabotan.jpg" alt="Perabotan" class="img-fluid">
-                <p>Perabotan</p>
-            </button>
-        </div>
-        <div class="col-3">
-            <button class="category-button">
-                <img src="../aset/Aset Gambar/makanan.jpg" alt="Makanan" class="img-fluid">
-                <p>Makanan</p>
-            </button>
-        </div>
-        <div class="col-3">
-            <button class="category-button">
-                <img src="../aset/icon/kioskuu.jpg" alt="Semua" class="img-fluid">
-                <p>Semua</p>
-            </button>
-        </div>
-        </div>
-    </div>
-
-
-            <div class="container my-5">
-                <h2>Produk Pilihan</h2>
-                <div class="row">
-                    <div class="col-3">
-                        <div class="product-box">
-                            <img src="../aset/Aset Gambar/roti.jpg" alt="Produk 1" class="img-fluid">
-                            <p class="product-name">Roti</p>
-                            <p class="product-price">Rp40.000</p>
-                        </div>
+        <div class="container my-5">
+            <h2>Produk Pilihan</h2>
+            <div class="row">
+                <div id="product-link" class="col-3">
+                    <div class="product-box">
+                        <img src="../aset/Aset Gambar/roti.jpg" alt="Produk 1" class="img-fluid">
+                        <p class="product-name">Roti</p>
+                        <p class="product-price">Rp40.000</p>
                     </div>
-                    <div class="col-3">
-                        <div class="product-box">
-                            <img src="../aset/Aset Gambar/rotisisir.jpg" alt="Produk 2" class="img-fluid">
-                            <p class="product-name">Roti Premium</p>
-                            <p class="product-price">Rp200.000</p>
-                        </div>
+                </div>
+                
+                <div class="col-3">
+                    <div class="product-box">
+                        <img src="../aset/Aset Gambar/rotisisir.jpg" alt="Produk 2" class="img-fluid">
+                        <p class="product-name">Roti Premium</p>
+                        <p class="product-price">Rp200.000</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <footer class="text-center">
-        <p>&copy; 2024 Kiosku. All Rights Reserved.</p>
-    </footer>
+        <footer class="text-center">
+            <p>&copy; 2024 Kiosku. All Rights Reserved.</p>
+        </footer>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        document.getElementById('product-link').addEventListener('click', function() {
+            window.location.href = 'produk.html';
+        });
+    </script>
 </body>
 </html>

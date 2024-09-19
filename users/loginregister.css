@@ -1,3 +1,4 @@
+/* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * {
@@ -12,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background: #7d2ae8;
   padding: 30px;
 }
 
@@ -22,9 +23,8 @@ body {
   width: 100%;
   background: #fff;
   padding: 40px 30px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   perspective: 2700px;
-  border: #d5d2d2 solid 1px;
 }
 
 .container .cover {
@@ -86,7 +86,7 @@ body {
   height: 100%;
   width: 100%;
   opacity: 0.5;
-  background: #FBBA00;
+  background: #7d2ae8;
 }
 
 .cover .text .text-1,
@@ -134,7 +134,7 @@ body {
   bottom: 0;
   height: 3px;
   width: 25px;
-  background: #FBBA00;
+  background: #7d2ae8;
 }
 
 .forms .signup-form .title:before {
@@ -168,12 +168,12 @@ body {
 
 .form-content .input-box input:focus,
 .form-content .input-box input:valid {
-  border-color: #FBBA00;
+  border-color: #7d2ae8;
 }
 
 .form-content .input-box i {
   position: absolute;
-  color: #FBBA00;
+  color: #7d2ae8;
   font-size: 17px;
 }
 
@@ -198,7 +198,7 @@ body {
 
 .forms .form-content .button input {
   color: #fff;
-  background: #FBBA00;
+  background: #7d2ae8;
   border-radius: 6px;
   padding: 0;
   cursor: pointer;
@@ -206,11 +206,11 @@ body {
 }
 
 .forms .form-content .button input:hover {
-  background: #FBBA00;
+  background: #5b13b9;
 }
 
 .forms .form-content label {
-  color: #FBBA00;
+  color: #5b13b9;
   cursor: pointer;
 }
 

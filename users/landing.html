@@ -18,10 +18,6 @@
                 <li><a href="#">Keunggulan</a></li>
                 <li><a href="#">Kontak</a></li>  
             </ul>
-            <div class="button-container">
-                <a href="loginregister.php" class="button">Masuk</a>
-                <a href="loginregister.php" class="button daftar">Daftar</a>
-            </div>
         </nav>
     </header>
     
@@ -31,9 +27,9 @@
             <h1>Temukan Kebutuhan Rumah Tangga dan Banyak Lagi Hanya di <span>Kiosku</span></h1>
             <p>Rasakan sensasi berbelanja tanpa rasa khawatir. Nikmati kumpulan produk kami yang berkualitas tinggi dengan harga terjangkau.</p>
             <div class="cta-buttons">
-                <button>Gabung Sekarang</button>
+                <button onclick="window.location.href='loginregister.php'">Gabung Sekarang</button>
                 <button class="button-white">Pelajari lebih Lanjut</button>
-            </div>           
+            </div>                 
         </div>
     </section>
 
@@ -64,11 +60,30 @@
         </div>
     </section>
 
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Tunggu apa lagi?</h2>
-            <p>Ayo mulai berbelanja di Kiosku</p>
-            <button>Gabung Sekarang</button>
+    <section class="products">
+        <h2>Produk Unggulan</h2>
+        <p>Jangan lewatkan kesempatan untuk menjelajahi produk unggulan kami!</p>
+        <div class="product-section">
+            <div class="product-card">
+                <img src="../aset/Aset Gambar/perabotan.jpg" alt="Perabotan">
+                <h3>Perabotan</h3>
+                <p>Alat Rumah Tangga</p>
+            </div>
+            <div class="product-card">
+                <img src="../aset/Aset Gambar/makanan.jpg" alt="Makanan">
+                <h3>Makanan</h3>
+                <p>Lezat dan Bergizi</p>
+            </div>
+            <div class="product-card">
+                <img src="../aset/Aset Gambar/minuman.jpg" alt="Minuman">
+                <h3>Minuman</h3>
+                <p>Legakan Dahaga</p>
+            </div>
+            <div class="product-card">
+                <img src="../aset/Aset Gambar/baju2.jpg" alt="Fashion">
+                <h3>Fashion</h3>
+                <p>Trendy dan Stylish</p>
+            </div>
         </div>
     </section>
 
@@ -126,7 +141,6 @@
         <div class="footer-bottom">
             <p>&copy; 2024 Kiosku. All Rights Reserved | <a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></p>
         </div>
-    </footer>    
-    
+    </footer>
 </body>
 </html>

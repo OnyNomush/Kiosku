@@ -4,9 +4,7 @@ $username = "root";
 $password = "";
 $dbname = "db_kiosku";
 
-
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
@@ -68,6 +66,11 @@ $conn->close();
     <link rel="stylesheet" href="loginregister.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+      function guestLogin() {
+        window.location.href = 'homepage.html'; // Arahkan ke halaman yang diinginkan untuk pengguna guest
+      }
+    </script>
   </head>
 <body>
   <div class="container">
@@ -90,6 +93,7 @@ $conn->close();
     </div>
     <div class="forms">
       <div class="form-content">
+        <!-- Login Form -->
         <div class="login-form">
           <div class="title">Masuk</div>
           <form action="loginregister.php" method="POST">
@@ -107,9 +111,15 @@ $conn->close();
                 <input type="submit" name="login" value="Konfirmasi">
               </div>
               <div class="text sign-up-text">Tidak punya akun? <label for="flip">Gabung sekarang!</label></div>
+              <!-- Tambahkan button Guest di sini -->
+              <div class="button input-box">
+                <input type="button" value="Guest" onclick="guestLogin()">
+              </div>
             </div>
           </form>
         </div>
+
+        <!-- Signup Form -->
         <div class="signup-form">
           <div class="title">Daftar</div>
           <form action="loginregister.php" method="POST">
@@ -130,6 +140,10 @@ $conn->close();
                 <input type="submit" name="signup" value="Konfirmasi">
               </div>
               <div class="text sign-up-text">Sudah punya akun? <label for="flip">Masuk sekarang!</label></div>
+              <!-- Tambahkan button Guest di sini -->
+              <div class="button input-box">
+                <input type="button" value="Guest" onclick="guestLogin()">
+              </div>
             </div>
           </form>
         </div>
