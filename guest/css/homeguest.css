@@ -1,0 +1,103 @@
+html, body {
+    height: 100%; /* Memastikan html dan body mengambil tinggi penuh */
+    margin: 0; /* Menghilangkan margin default */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Memastikan wrapper mengambil minimal tinggi penuh */
+}
+
+.content {
+    flex: 1; /* Membuat area konten fleksibel */
+}
+
+footer {
+    background-color: #333; /* Ubah sesuai warna footer Anda */
+    color: #fff; /* Ubah sesuai warna teks footer Anda */
+    padding: 20px; /* Atur padding sesuai kebutuhan */
+}
+
+
+.navbar {
+    background-color: #FBBA00;
+}
+
+.logo-img-navbar {
+    width: 40px; 
+    height: 40px; 
+    object-fit: cover;
+}
+
+.search-bar {
+    width: 50%;
+}
+
+/* Tombol Masuk (Oranye dengan teks putih) */
+.btn-orange {
+    background-color: #FBBA00 !important; /* Paksa penggunaan warna oranye */
+    color: #fff !important; /* Paksa warna teks putih */
+    border: none !important;
+}
+
+.btn-white-orange {
+    background-color: #fff !important;
+    color: #FBBA00 !important;
+    border: 2px solid #FBBA00 !important;
+}
+
+.btn-orange:hover {
+    background-color: #000000 !important; /* Paksa penggunaan warna oranye */
+    color: #FBBA00 !important; /* Paksa warna teks putih */
+    border: none !important;
+}
+
+.btn-white-orange:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+}
+
+.product-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-box {
+    width: 250px; /* Tentukan lebar tetap untuk semua produk */
+    height: 350px; /* Tentukan tinggi tetap untuk semua produk */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px; /* Jarak antar produk */
+    overflow: hidden;
+}
+
+.product-box img {
+    width: 100%; /* Membuat gambar memenuhi lebar kontainer */
+    height: 200px; /* Tentukan tinggi tetap untuk gambar */
+    object-fit: cover; /* Memastikan gambar ter-crop dengan baik tanpa distorsi */
+    margin-bottom: 10px; /* Jarak antara gambar dan nama produk */
+}
+
+.product-name, .product-price {
+    text-align: center; /* Mengatur teks di tengah */
+    margin: 0; /* Menghilangkan margin default */
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+
+}

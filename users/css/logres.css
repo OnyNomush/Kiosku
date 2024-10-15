@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #7d2ae8;
+  background: #fdfdfd;
   padding: 30px;
 }
 
@@ -86,7 +86,7 @@ body {
   height: 100%;
   width: 100%;
   opacity: 0.5;
-  background: #7d2ae8;
+  background: #000000;
 }
 
 .cover .text .text-1,
@@ -134,16 +134,17 @@ body {
   bottom: 0;
   height: 3px;
   width: 25px;
-  background: #7d2ae8;
+  background: #fcb045;
 }
 
 .forms .signup-form .title:before {
   width: 20px;
 }
 
-.forms .form-content .input-boxes {
-  margin-top: 30px;
+.forms .form-content .input-box {
+  margin: 5px 0; /* Ubah margin atas dan bawah menjadi lebih kecil */
 }
+
 
 .forms .form-content .input-box {
   display: flex;
@@ -168,12 +169,12 @@ body {
 
 .form-content .input-box input:focus,
 .form-content .input-box input:valid {
-  border-color: #7d2ae8;
+  border-color: #fcb045;
 }
 
 .form-content .input-box i {
   position: absolute;
-  color: #7d2ae8;
+  color: #fcb045;
   font-size: 17px;
 }
 
@@ -193,24 +194,28 @@ body {
 
 .forms .form-content .button {
   color: #fff;
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .forms .form-content .button input {
   color: #fff;
-  background: #7d2ae8;
+  background: #fcb045;
   border-radius: 6px;
   padding: 0;
   cursor: pointer;
   transition: all 0.4s ease;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .forms .form-content .button input:hover {
-  background: #5b13b9;
+  background: #000000;
+  color: #fcb045;
 }
 
 .forms .form-content label {
-  color: #5b13b9;
+  color: #fcb045;
   cursor: pointer;
 }
 

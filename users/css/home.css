@@ -1,0 +1,57 @@
+html, body {
+    height: 100%; /* Memastikan html dan body mengambil tinggi penuh */
+    margin: 0; /* Menghilangkan margin default */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Memastikan wrapper mengambil minimal tinggi penuh */
+}
+
+.content {
+    flex: 1; /* Membuat area konten fleksibel */
+}
+
+footer {
+    background-color: #333; /* Ubah sesuai warna footer Anda */
+    color: #fff; /* Ubah sesuai warna teks footer Anda */
+    padding: 20px; /* Atur padding sesuai kebutuhan */
+}
+
+
+.navbar {
+    background-color: #FBBA00;
+}
+
+.logo-img-navbar {
+    width: 40px; 
+    height: 40px; 
+    object-fit: cover;
+}
+
+.search-bar {
+    width: 50%;
+}
+
+.nav-link {
+    font-size: 16px;
+    color: #333;
+    margin-right: 20px;
+}
+
+.nav-link i {
+    margin-right: 5px;
+}
+
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+
+}

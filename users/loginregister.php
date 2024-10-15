@@ -15,16 +15,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $email = $_POST['email'];
         $password = $_POST['password'];
+        
 
         $password = ($password);
 
-        $sql = "SELECT * FROM tb_user WHERE email='$email' AND password='$password'";
-        $result = $conn->query($sql);
+        $sql = mysqli_query($conn, "SELECT * FROM tb_user WHERE email='$email'");
+        $data = mysqli_fetch_array($sql);
+        $cml = mysqli_num_rows($sql);
+        $password_asl = password_verify($password, $data['password']);
+        
 
-        if ($result->num_rows > 0) {
+        if ($cml > 0) {
             echo "<script type='text/javascript'>
                 alert('Selamat Datang, $email!');
-                window.location.href = 'homepage.html';
+                window.location.href = 'homepage.php';
                 </script>";
         } else {
             echo "<script type='text/javascript'>
@@ -39,10 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nama = $_POST['nama'];
         $email = $_POST['email'];
         $password = $_POST['password'];
+        $password_hsh = password_hash($password, PASSWORD_DEFAULT);
 
         $password = ($password);
 
-        $sql = "INSERT INTO tb_user (nama, email, password) VALUES ('$nama', '$email', '$password')";
+        $sql = "INSERT INTO tb_user (nama, email, password) VALUES ('$nama', '$email', '$password_hsh')";
 
         if ($conn->query($sql) === TRUE) {
             echo "<script type='text/javascript'>
@@ -63,12 +68,12 @@ $conn->close();
   <head>
     <meta charset="UTF-8">
     <title>Login and Registration Form | Kiosku</title>
-    <link rel="stylesheet" href="loginregister.css">
+    <link rel="stylesheet" href="./css/logres.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript">
       function guestLogin() {
-        window.location.href = 'homepage.html'; // Arahkan ke halaman yang diinginkan untuk pengguna guest
+        window.location.href = 'homepage.php'; // Arahkan ke halaman yang diinginkan untuk pengguna guest
       }
     </script>
   </head>
@@ -111,10 +116,6 @@ $conn->close();
                 <input type="submit" name="login" value="Konfirmasi">
               </div>
               <div class="text sign-up-text">Tidak punya akun? <label for="flip">Gabung sekarang!</label></div>
-              <!-- Tambahkan button Guest di sini -->
-              <div class="button input-box">
-                <input type="button" value="Guest" onclick="guestLogin()">
-              </div>
             </div>
           </form>
         </div>
@@ -140,10 +141,6 @@ $conn->close();
                 <input type="submit" name="signup" value="Konfirmasi">
               </div>
               <div class="text sign-up-text">Sudah punya akun? <label for="flip">Masuk sekarang!</label></div>
-              <!-- Tambahkan button Guest di sini -->
-              <div class="button input-box">
-                <input type="button" value="Guest" onclick="guestLogin()">
-              </div>
             </div>
           </form>
         </div>

@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kiosku - Temukan Kebutuhan Rumah Tangga</title>
-    <link rel="stylesheet" href="landing.css">
+    <title>Kiosku </title>
+    <link rel="stylesheet" href="./css/landingpage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+    <div class="scroll-container">
     <header>
-        <div class="logo">
-            <h2>Kiosku</h2>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Produk Kami</a></li>
-                <li><a href="#">Keunggulan</a></li>
-                <li><a href="#">Kontak</a></li>  
-            </ul>
-        </nav>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><b>Kiosku</b></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              
+            </div>
+          </nav>
     </header>
     
     <section class="hero">
@@ -27,8 +28,8 @@
             <h1>Temukan Kebutuhan Rumah Tangga dan Banyak Lagi Hanya di <span>Kiosku</span></h1>
             <p>Rasakan sensasi berbelanja tanpa rasa khawatir. Nikmati kumpulan produk kami yang berkualitas tinggi dengan harga terjangkau.</p>
             <div class="cta-buttons">
-                <button onclick="window.location.href='loginregister.php'">Gabung Sekarang</button>
-                <button class="button-white">Pelajari lebih Lanjut</button>
+                <button class="cta-buttons button" onclick="window.location.href='homeguest.php'"><b>Coba Sekarang</b></button>
+                <button class="button-white"><b>Pelajari lebih Lanjut</b></button>
             </div>                 
         </div>
     </section>
@@ -132,9 +133,9 @@
                 </div>
                 <div class="contact-us">
                     <h4>Contacts us</h4>
-                    <p><img src="../aset/icons/email.svg" alt="Email"> athaillahdeva1109@gmail.com</p>
-                    <p><img src="../aset/icons/phone.svg" alt="Phone"> 0895622253088</p>
-                    <p><img src="../aset/icons/location.svg" alt="Location"> Kota Malang</p>
+                    <p> athaillahdeva1109@gmail.com</p>
+                    <p> 0895622253088</p>
+                    <p> Kota Malang</p>
                 </div>
             </div>
         </div>
@@ -142,5 +143,38 @@
             <p>&copy; 2024 Kiosku. All Rights Reserved | <a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></p>
         </div>
     </footer>
-</body>
+    </div>
+
+    <script>
+        // Fungsi untuk mengecek apakah elemen berada di viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    
+        // Fungsi untuk menambahkan kelas 'show' ketika elemen terlihat
+        function checkProductsInView() {
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach((card) => {
+                if (isElementInViewport(card)) {
+                    card.classList.add('show');
+                }
+            });
+        }
+    
+        // Event listener untuk scroll dan resize
+        window.addEventListener('scroll', checkProductsInView);
+        window.addEventListener('resize', checkProductsInView);
+    
+        // Cek saat halaman dimuat pertama kali
+        document.addEventListener('DOMContentLoaded', checkProductsInView);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+    
 </html>
