@@ -15,41 +15,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $email = $_POST['email'];
         $password = $_POST['password'];
+        
 
-        // Query untuk mendapatkan data pengguna berdasarkan email
+        $password = ($password);
+
         $sql = mysqli_query($conn, "SELECT * FROM tb_user WHERE email='$email'");
         $data = mysqli_fetch_array($sql);
         $cml = mysqli_num_rows($sql);
+        $password_asl = password_verify($password, $data['password']);
+        
 
-        // Jika pengguna ditemukan
         if ($cml > 0) {
-            // Periksa apakah password yang dimasukkan cocok dengan hash password di database
-            $password_asl = password_verify($password, $data['password']);
-
-            // Periksa apakah password benar
-            if ($password_asl) {
-                // Periksa apakah akun diblokir
-                $ban_until = $data['ban_until'];
-                if ($ban_until && strtotime($ban_until) > time()) {
-                    echo "<script type='text/javascript'>
-                        alert('Akun Anda diblokir hingga $ban_until');
-                        window.location.href = 'loginregister.php';
-                        </script>";
-                } else {
-                    echo "<script type='text/javascript'>
-                        alert('Selamat Datang, $email!');
-                        window.location.href = 'homepage.php';
-                        </script>";
-                }
-            } else {
-                // Password salah
-                echo "<script type='text/javascript'>
-                    alert('Login gagal! Periksa kembali email dan password Anda.');
-                    window.location.href = 'loginregister.php';
-                    </script>";
-            }
+            echo "<script type='text/javascript'>
+                alert('Selamat Datang, $email!');
+                window.location.href = 'dashboard';
+                </script>";
         } else {
-            // Jika email tidak ditemukan
             echo "<script type='text/javascript'>
                 alert('Login gagal! Periksa kembali email dan password Anda.');
                 window.location.href = 'loginregister.php';
@@ -59,13 +40,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['signup'])) {
 
-        $name = $_POST['nama'];  // Gantilah 'nama' dengan 'name' untuk menyesuaikan kolom tabel
+        $nama = $_POST['nama'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $password_hsh = password_hash($password, PASSWORD_DEFAULT);
 
-        // Menyesuaikan query dengan kolom tabel yang benar
-        $sql = "INSERT INTO tb_user (name, email, password) VALUES ('$name', '$email', '$password_hsh')";
+        $password = ($password);
+
+        $sql = "INSERT INTO tb_user (nama, email, password) VALUES ('$nama', '$email', '$password_hsh')";
 
         if ($conn->query($sql) === TRUE) {
             echo "<script type='text/javascript'>
@@ -86,7 +68,7 @@ $conn->close();
   <head>
     <meta charset="UTF-8">
     <title>Login and Registration Form | Kiosku</title>
-    <link rel="stylesheet" href="./css/logres.css">
+    <link rel="stylesheet" href="logres.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript">
@@ -118,7 +100,7 @@ $conn->close();
       <div class="form-content">
         <!-- Login Form -->
         <div class="login-form">
-          <div class="title">Masuk</div>
+          <div class="title">Admin</div>
           <form action="loginregister.php" method="POST">
             <div class="input-boxes">
               <div class="input-box">
@@ -133,7 +115,7 @@ $conn->close();
               <div class="button input-box">
                 <input type="submit" name="login" value="Konfirmasi">
               </div>
-              <div class="text sign-up-text">Tidak punya akun? <label for="flip">Gabung sekarang!</label></div>
+              <div class="text sign-up-text"><label for="flip"></label></div>
             </div>
           </form>
         </div>

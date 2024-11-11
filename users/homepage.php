@@ -186,7 +186,7 @@ $(document).ready(function(){
     <div class="content flex-grow-1">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid"> <!-- Menggunakan container-fluid agar memenuhi lebar halaman -->
-                <a class="navbar-brand d-flex align-items-center mx-3" href="homepage.css">
+                <a class="navbar-brand d-flex align-items-center mx-3" href="homepage.php">
                     <img src="../aset/icon/kioskuu.jpg" alt="Kiosku Logo" class="rounded-circle logo-img-navbar">
                     <span class="ml-2"><b>Kiosku</b></span>
                 </a>
@@ -233,28 +233,28 @@ $(document).ready(function(){
 			<div class="carousel-inner">
 				<div class="item carousel-item active">
 					<div class="row">
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-								<div class="img-box">
-									<img src="/examples/images/products/ipad.jpg" class="img-fluid" alt="">									
-								</div>
-								<div class="thumb-content">
-									<h4>Apple iPad</h4>									
-									<div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>
-									<p class="item-price"><strike>$400.00</strike> <b>$369.00</b></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>						
-							</div>
-						</div>
+					<div class="col-sm-3">
+					<div class="thumb-wrapper" data-id="1"> <!-- Pastikan setiap produk punya ID unik -->
+    					<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+    						<div class="img-box">
+        					<img src="/examples/images/products/ipad.jpg" class="img-fluid" alt="">
+    					</div>
+    				<div class="thumb-content">
+        			<h4>Apple iPad</h4>
+        			<div class="star-rating">
+            			<ul class="list-inline">
+                			<li class="list-inline-item"><i class="fa fa-star"></i></li>
+                			<li class="list-inline-item"><i class="fa fa-star"></i></li>
+                			<li class="list-inline-item"><i class="fa fa-star"></i></li>
+                			<li class="list-inline-item"><i class="fa fa-star"></i></li>
+                			<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+            		</ul>
+        		</div>
+        			<p class="item-price"><strike>$400.00</strike> <b>$369.00</b></p>
+        			<a href="#" class="btn btn-primary">Add to Cart</a>
+    		</div>
+			</div>
+			</div>
 						<div class="col-sm-3">
 							<div class="thumb-wrapper">
 								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
@@ -541,6 +541,32 @@ $(document).ready(function(){
             window.location.href = 'produk.php';
         });
     </script>
+	<script>
+	document.querySelectorAll('.wish-icon i').forEach(item => {
+    item.addEventListener('click', function() {
+        let productId = this.closest('.thumb-wrapper').getAttribute('data-id');
+        
+        fetch('save_to_koleksi.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                productId: productId
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success) {
+                alert('Produk telah disimpan ke Koleksi!');
+            } else {
+                alert('Terjadi kesalahan, coba lagi.');
+            }
+        });
+    });
+});
+</script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
