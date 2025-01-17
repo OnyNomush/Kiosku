@@ -1,57 +1,135 @@
+/* Atur margin dan padding global */
 html, body {
     height: 100%; /* Memastikan html dan body mengambil tinggi penuh */
     margin: 0; /* Menghilangkan margin default */
+    padding: 0; /* Menghilangkan padding default */
 }
 
+/* Navbar */
+.navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    margin-left: 8px; /* Jarak antar link ke kiri */
+    margin-right: 8px; /* Jarak antar link ke kanan */
+}
+
+.navbar-nav .nav-link svg {
+    width: 24px; /* Ukuran ikon */
+    height: 24px;
+}
+
+.navbar .bi {
+    font-size: 30px; /* Ukuran ikon */
+}
+
+.logo-img-navbar {
+    width: 40px; /* Ukuran logo */
+    height: 40px;
+}
+
+.search-bar {
+    width: 40%; /* Ukuran search bar */
+}
+
+/* Wrapper untuk tinggi penuh */
 .wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Memastikan wrapper mengambil minimal tinggi penuh */
 }
 
+/* Atur ulang container agar elemen berada di sebelah kiri */
+.container {
+    max-width: 100%; /* Pastikan container mengambil lebar penuh */
+    padding-left: 15px; /* Tambahkan padding kecil untuk ruang ke kiri */
+    margin-left: 0; /* Hilangkan margin kiri */
+    padding-right: 15px; /* Tambahkan padding kecil untuk ruang ke kanan */
+}
+
+/* Pastikan heading dan produk berada di kiri */
+h2 {
+    text-align: left; /* Jaga teks heading di sebelah kiri */
+    margin-left: 0; /* Hilangkan margin kiri */
+}
+
+/* Baris produk */
+.row {
+    justify-content: flex-start; /* Atur elemen dalam baris ke kiri */
+    margin-left: 0 !important; /* Hilangkan margin kiri bawaan */
+}
+
+/* Produk */
+.product-box {
+    margin-left: 0; /* Pastikan produk tidak memiliki margin kiri tambahan */
+    margin-right: 10px; /* Sedikit jarak antar card produk */
+}
+
+/* Konten utama */
 .content {
     flex: 1; /* Membuat area konten fleksibel */
 }
 
+/* Footer */
 footer {
-    background-color: #333; /* Ubah sesuai warna footer Anda */
-    color: #fff; /* Ubah sesuai warna teks footer Anda */
-    padding: 20px; /* Atur padding sesuai kebutuhan */
+    background-color: #333; /* Warna footer */
+    color: #fff; /* Warna teks footer */
+    padding: 20px; /* Padding footer */
 }
 
-
-.navbar {
-    background-color: #FBBA00;
+/* Produk */
+.product-section {
+    display: flex;
+    justify-content: flex-start; /* Mengatur produk ke sebelah kiri */
+    flex-wrap: wrap; /* Membuat produk tetap membungkus jika layar sempit */
+    gap: 10px; /* Mengurangi jarak antar card produk */
 }
 
-.logo-img-navbar {
-    width: 40px; 
-    height: 40px; 
-    object-fit: cover;
+.product-box {
+    width: 220px; /* Lebar tetap untuk produk */
+    height: 380px; /* Tinggi tetap untuk produk */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Menjaga jarak antar elemen */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* Jarak antar produk */
+    padding: 10px;
+    overflow: hidden;
 }
 
-.search-bar {
-    width: 50%;
+.product-box img {
+    width: 100%; /* Membuat gambar memenuhi lebar kontainer */
+    height: 180px; /* Tinggi tetap untuk gambar */
+    object-fit: cover; /* Memastikan gambar ter-crop dengan baik tanpa distorsi */
+    margin-bottom: 6px; /* Jarak antara gambar dan nama produk */
 }
 
-.nav-link {
-    font-size: 16px;
-    color: #333;
-    margin-right: 20px;
+.product-name, .product-price {
+    text-align: center; /* Mengatur teks di tengah */
+    margin: 0; /* Menghilangkan margin default */
+    margin-bottom: 2px; /* Menambah jarak antar teks */
 }
 
-.nav-link i {
-    margin-right: 5px;
+.product-price {
+    font-weight: bold;
+    color: #FBBA00; /* Warna harga */
 }
 
+/* Tombol Simpan ke Koleksi */
+.btn {
+    padding: 8px 15px; /* Menyesuaikan ukuran tombol */
+    background-color: #FBBA00; /* Warna tombol */
+    border: none; /* Menghilangkan border */
+    border-radius: 5px; /* Membulatkan tombol */
+    color: white; /* Warna teks tombol */
+    font-weight: bold;
+}
 
-
-
-footer {
-    background-color: #333;
+/* Tombol hover */
+.btn:hover {
+    background-color: #f9a900;
     color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: auto;
-
 }

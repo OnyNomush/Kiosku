@@ -1,168 +1,10 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-    color: #333;
-}
-
-header {
-    background-color: #f8f9fa;
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
-}
-
-.header-left a {
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-}
-
-.header-left p {
-    margin: 0;
-    font-size: 14px;
-    color: #333;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-}
-
-.header-right a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-.product-section {
-    padding: 40px 0;
-}
-
-.product-details {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.product-image {
-    width: 40%;
-    
-    
-}
-
-.product-image img {
-    width: 100%;
-}
-
-.product-info {
-    width: 50%;
-    padding-left: 40px;
-    margin-left: auto;
-}
-
-.rating {
-    display: inline-block;
-    color: #ffc107;
-    font-size: 1.2em;
-}
-
-.product-features {
-    list-style: none;
-    padding: 0;
-}
-
-.product-features li {
-    margin-bottom: 10px;
-}
-
+/* Warna Oranye */
 .price {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.shipping-info {
-    font-size: 0.8em;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.purchase-options {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-.purchase-options label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.purchase-options input {
-    margin-right: 10px;
-}
-
-.subscription-details {
-    color: #fcb045;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.quantity-control {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.quantity-control label {
-    margin-right: 10px;
-}
-
-.quantity {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.quantity button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 1.2em;
-}
-
-.quantity input {
-    width: 40px;
-    text-align: center;
-    border: none;
+    color: #FBBA00; /* Warna oranye untuk teks harga */
 }
 
 .add-to-cart {
-    background-color: #fcb045;
+    background-color: #FBBA00; /* Warna tombol oranye */
     color: #fff;
     border: none;
     padding: 12px 20px;
@@ -171,174 +13,56 @@ header {
     font-size: 1.1em;
 }
 
-.benefits-section {
-    padding: 40px 0;
-    background-color: #fff;
-}
-
-.benefits {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 30px;
-    gap: 40px;
-}
-
-.benefit {
-    text-align: center;
-    width: 25%;
-    padding: 0 20px;
-}
-
-.benefit img {
-    width: 100px;
-}
-
-.benefit h3 {
-    margin-top: 10px;
-}
-
-.products-section {
-    padding: 40px 0;
-}
-
-.products {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 30px;
-}
-
-.comments-section {
-    margin-top: 20px;
-    padding: 20px;
-    border-top: 1px solid #ddd;
-}
-
-.comments-section h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.comments-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
-
-.comments-list li {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.comment-author {
-    font-weight: bold;
-    color: #333;
-}
-
-.comment-text {
-    display: inline-block;
-    margin-left: 5px;
-    color: #555;
-}
-
-.comment-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.comment-form h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.comment-form textarea {
-    width: 100%;
-    height: 80px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.submit-comment {
-    align-self: flex-end;
-    background-color: #FBBA00;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.submit-comment:hover {
+.add-to-cart:hover {
     background-color: #f1a700;
 }
 
-
-@media (max-width: 768px) {
-    .header-left,
-    .header-right {
-        width: 100%;
-    }
-
-    .header-right {
-        text-align: left;
-    }
-
-    .product-details {
-        flex-direction: column;
-    }
-
-    .product-image {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .product-info {
-        width: 100%;
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-    .benefits {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .benefit {
-        width: 100%;
-        margin-bottom: 20px;
-        padding: 0;
-    }
+/* Rating Bintang */
+.rating .fa-star {
+    font-size: 24px;
+    color: #ddd; /* Warna default bintang */
+    cursor: pointer;
 }
 
-.menu-toggle {
-    display: block;
+.rating .fa-star.checked {
+    color: #FBBA00; /* Warna bintang saat dipilih */
 }
 
-.header-right {
-    display: none;
+/* Footer di bawah halaman */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
-.menu-toggle.active + .header-right {
-    display: block;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
+.container {
+    flex: 1;
+}
+
+footer {
     background-color: #333;
+    color: #fff;
+    text-align: center;
     padding: 20px;
-    text-align: left;
+    width: 100%;
+    position: relative;
 }
 
-.menu-toggle.active + .header-right a {
-    margin-right: 0;
-    margin-bottom: 10px;
-    display: block;
+/* Tombol navbar pada layar kecil */
+.navbar-toggler {
+    border: none;
 }
 
-.menu-toggle.active + .header-right .menu-toggle {
-    display: none;
+/* Pastikan tombol menggunakan warna oranye */
+.btn-primary {
+    background-color: #FBBA00 !important; /* Warna oranye */
+    border-color: #FBBA00 !important; /* Warna border oranye */
 }
+
+.btn-primary:hover {
+    background-color: #f1a700 !important; /* Warna hover */
+    border-color: #f1a700 !important;
+}
+
+

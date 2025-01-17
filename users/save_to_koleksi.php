@@ -17,16 +17,18 @@ $data = json_decode(file_get_contents('php://input'), true);
 $productId = $data['productId'];
 
 // Dapatkan ID pengguna dari session
-$userId = $_SESSION['user_id']; 
+$userId = $_SESSION['user_id'];
 
-// Simpan produk ke tabel koleksi
-$sql = "INSERT INTO koleksi (user_id, product_id) VALUES ('$userId', '$productId')";
+// Simpan produk ke tabel koleksi dengan prepared statement
+$stmt = $conn->prepare("INSERT INTO koleksi (user_id, product_id, created_at) VALUES (?, ?, NOW())");
+$stmt->bind_param("ii", $userId, $productId); // "ii" menunjukkan bahwa kedua parameter adalah integer
 
-if ($conn->query($sql) === TRUE) {
+if ($stmt->execute()) {
     echo json_encode(['success' => true]);
 } else {
-    echo json_encode(['success' => false, 'error' => $conn->error]);
+    echo json_encode(['success' => false, 'error' => $stmt->error]);
 }
 
+$stmt->close();
 $conn->close();
 ?>
