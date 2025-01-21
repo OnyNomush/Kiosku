@@ -1,5 +1,11 @@
 <?php
 session_start();
+include_once 'config.php'; // File koneksi database
+
+// Ambil data produk dari database
+$query = "SELECT * FROM produk";
+$result = mysqli_query($conn, $query);
+$produk = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
